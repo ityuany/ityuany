@@ -17,8 +17,8 @@ Here are some ideas to get you started:
 
 
 <a href="https://github.com/mixj93">
-  <img align="center" src="https://mixj93-github-readme-stats.vercel.app/api?username=mixj93&hide=contribs&count_private=true&show_icons=true" />
+  <img align="center" src="https://mixj93-github-readme-stats.vercel.app/api?username=ityuany&hide=contribs&count_private=true&show_icons=true" />
 </a>
 <a href="https://github.com/mixj93">
-  <img align="center" src="https://mixj93-github-readme-stats.vercel.app/api/top-langs/?username=mixj93&layout=compact" />
+  <img align="center" src="https://mixj93-github-readme-stats.vercel.app/api/top-langs/?username=ityuany&layout=compact" />
 </a>
