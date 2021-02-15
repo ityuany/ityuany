@@ -22,8 +22,8 @@ Here are some ideas to get you started:
 
 
 <a href="https://github.com/ityuany">
-  <img alt="stats" width="47%" align="left" src="https://github-readme-stats.vercel.app/api?username=ityuany&hide=contribs&count_private=true&show_icons=true" />
+  <img alt="stats" width="50%" align="left" src="https://github-readme-stats.vercel.app/api?username=ityuany&hide=contribs&count_private=true&show_icons=true" />
 </a>
 <a href="https://github.com/ityuany">
-  <img alt="trophy" width="48%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ityuany&layout=compact" />
+  <img alt="trophy" width="50%" align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ityuany&layout=compact" />
 </a>
