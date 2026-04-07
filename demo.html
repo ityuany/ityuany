@@ -1,0 +1,20 @@
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+
+<button onclick="buy()">Buy</button>
+
+<script>
+  Paddle.Initialize({
+    token: "test_xxx" // 你的 token
+  });
+
+  function buy() {
+    Paddle.Checkout.open({
+      items: [
+        {
+          priceId: "pri_0lknm299m58erxk4y5c7l956cc", // 你这个
+          quantity: 1
+        }
+      ]
+    });
+  }
+</script>
