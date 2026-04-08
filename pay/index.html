@@ -1,20 +1,89 @@
-<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy Cursor Mover</title>
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 680px;
+      margin: 60px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    .card {
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .buy-btn {
+      background: black;
+      color: white;
+    }
+    .muted {
+      color: #666;
+      font-size: 14px;
+    }
+    code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Cursor Mover</h1>
+    <p>One-time purchase.</p>
 
-<button onclick="buy()">Buy</button>
+    <p class="muted">
+      Price ID:
+      <code>pri_01knm299m58erxk4y5c71956cc</code>
+    </p>
 
-<script>
-  Paddle.Initialize({
-    token: "test_xxx" // 你的 token
-  });
+    <button class="buy-btn" id="buyButton">Buy now</button>
 
-  function buy() {
-    Paddle.Checkout.open({
-      items: [
-        {
-          priceId: "pri_0lknm299m58erxk4y5c7l956cc", // 你这个
-          quantity: 1
+    <p class="muted" id="status"></p>
+  </div>
+
+  <script>
+    const statusEl = document.getElementById("status");
+
+    Paddle.Initialize({
+      token: "YOUR_CLIENT_SIDE_TOKEN",
+      eventCallback: function (event) {
+        console.log("Paddle event:", event);
+
+        if (event.name === "checkout.completed") {
+          statusEl.textContent = "Payment completed.";
         }
-      ]
+      }
     });
-  }
-</script>
+
+    document.getElementById("buyButton").addEventListener("click", () => {
+      try {
+        Paddle.Checkout.open({
+          items: [
+            {
+              priceId: "pri_01knm299m58erxk4y5c71956cc",
+              quantity: 1
+            }
+          ]
+        });
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = "Failed to open checkout.";
+      }
+    });
+  </script>
+</body>
+</html>
